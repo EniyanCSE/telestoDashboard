@@ -51,6 +51,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <!--Add jQuery-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -253,7 +254,7 @@
           data-bs-placement="right"
           title="Show Full Sidebar"
         >
-          <i class="bi bi-circle align-middle"></i>
+          <i class="bi bi-check-circle"></i>
         </div>
 
         <!-- Full Sidebar Menu Close Button -->
@@ -330,14 +331,10 @@
               <div class="collapse" id="sidebarPages">
                 <ul class="side-nav-second-level">
                   <li>
-                    <a href="{% url 'plots' %}" class="side-nav-link"
-                      >Gas/Oil/water Rate</a
-                    >
+                    <a href="{% url 'plots' %}" class="side-nav-link">Plot1</a>
                   </li>
                   <li>
-                    <a href="{% url 'plots' %}" class="side-nav-link"
-                      >History and simulated Value</a
-                    >
+                    <a href="{% url 'plots' %}" class="side-nav-link">Plot2</a>
                   </li>
                 </ul>
               </div>

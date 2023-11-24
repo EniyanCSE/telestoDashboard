@@ -67,6 +67,10 @@
       integrity="sha384-u1OknCvxWvY5kfmNBgKZ4jioR24EXd4z+J2t4pOp9i0iDj8vSv4+UWX6C/F5o6w6"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="{% static 'telestoapp/assets/css/graph.css'%}"
+    />
   </head>
   <body>
     <!-- Begin page -->
@@ -330,14 +334,10 @@
               <div class="collapse" id="sidebarPages">
                 <ul class="side-nav-second-level">
                   <li>
-                    <a href="{% url 'plots' %}" class="side-nav-link"
-                      >Gas/Oil/water Rate</a
-                    >
+                    <a href="{% url 'plots' %}" class="side-nav-link">Plot1</a>
                   </li>
                   <li>
-                    <a href="{% url 'plots' %}" class="side-nav-link"
-                      >History and simulated Value</a
-                    >
+                    <a href="{% url 'plots' %}" class="side-nav-link">Plot2</a>
                   </li>
                 </ul>
               </div>
@@ -383,120 +383,138 @@
                 <div
                   class="page-title-box justify-content-between d-flex align-items-lg-center flex-lg-row flex-column"
                 >
-                  <h4 class="page-title">Dashboard</h4>
+                  <h4 class="page-title">
+                    Plot Analysis
+                    <a href="#well-select-label"
+                      ><i class="bi bi-arrow-down"></i
+                    ></a>
+                  </h4>
                 </div>
               </div>
             </div>
-
-            <div
-              class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-6"
-            >
-              <div class="col">
-                <div class="card widget-icon-box">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1 overflow-hidden">
-                        <h5
-                          class="text-muted text-uppercase fs-13 mt-0"
-                          title="Number of Customers"
-                        >
-                          Oil (Kls)
-                        </h5>
-                        <h3 class="my-3">7,005,193</h3>
-                        <p class="mb-0 text-muted text-truncate">
-                          <span class="badge bg-success me-1"
-                            ><i class="bi bi-arrow-up-short"></i> 2,541</span
-                          >
-                          <span>Since last month</span>
-                        </p>
-                      </div>
-                      <div class="avatar-sm flex-shrink-0">
-                        <span
-                          class="avatar-title text-bg-success rounded rounded-3 fs-3 widget-icon-box-avatar shadow"
-                        >
-                          <i class="bi bi-droplet"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end card-body-->
-                </div>
-                <!-- end card-->
-              </div>
-              <!-- end col-->
-
-              <div class="col">
-                <div class="card widget-icon-box">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1 overflow-hidden">
-                        <h5
-                          class="text-muted text-uppercase fs-13 mt-0"
-                          title="Number of Orders"
-                        >
-                          Water (Kls)
-                        </h5>
-                        <h3 class="my-3">5,640,514</h3>
-                        <p class="mb-0 text-muted text-truncate">
-                          <span class="badge bg-danger me-1"
-                            ><i class="bi bi-arrow-down-short"></i> 1.08%</span
-                          >
-                          <span>Since last month</span>
-                        </p>
-                      </div>
-                      <div class="avatar-sm flex-shrink-0">
-                        <span
-                          class="avatar-title text-bg-info rounded rounded-3 fs-3 widget-icon-box-avatar shadow"
-                        >
-                          <i class="bi bi-droplet-fill"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end card-body-->
-                </div>
-                <!-- end card-->
-              </div>
-              <!-- end col-->
-
-              <div class="col">
-                <div class="card widget-icon-box">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1 overflow-hidden">
-                        <h5
-                          class="text-muted text-uppercase fs-13 mt-0"
-                          title="Average Revenue"
-                        >
-                          Gas (Mscum)
-                        </h5>
-                        <h3 class="my-3">3,644,262</h3>
-                        <p class="mb-0 text-muted text-truncate">
-                          <span class="badge bg-danger me-1"
-                            ><i class="bi bi-arrow-down-short"></i> 7.00%</span
-                          >
-                          <span>Since last month</span>
-                        </p>
-                      </div>
-                      <div class="avatar-sm flex-shrink-0">
-                        <span
-                          class="avatar-title text-bg-danger rounded rounded-3 fs-3 widget-icon-box-avatar shadow"
-                        >
-                          <i class="bi bi-droplet-half"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end card-body-->
-                </div>
-                <!-- end card-->
-              </div>
-              <!-- end col-->
-            </div>
-            <!-- end row -->
           </div>
         </div>
+        <!--graph code starts here -->
+        <label for="well-select" style="font-size: 20px">SELECT WELL:</label>
+        <select id="well-select" style="height: 20px">
+          <option value="HJN023">Select WELL:</option>
+          <option value="HJN023">HJN023</option>
+          <option value="HJN024">HJN024</option>
+          <option value="HJN024D">HJN024D</option>
+          <option value="HJN029">HJN029</option>
+          <option value="HJN030">HJN030</option>
+          <option value="HJN031">HJN031</option>
+          <option value="HJN032">HJN032</option>
+          <option value="HJN033">HJN033</option>
+          <option value="HJN034">HJN034</option>
+          <option value="HJN035">HJN035</option>
+          <option value="HJN036">HJN036</option>
+          <option value="HJN037">HJN037</option>
+          <option value="HJN039">HJN039</option>
+          <option value="HJN040">HJN040</option>
+          <option value="HJN041">HJN041</option>
+          <option value="HJN041E">HJN041E</option>
+          <option value="HJN043">HJN043</option>
+          <option value="HJN044">HJN044</option>
+          <option value="HJN045">HJN045</option>
+          <option value="HJN046">HJN046</option>
+          <option value="HJN047">HJN047</option>
+          <option value="HJN048">HJN048</option>
+          <option value="HJN048D">HJN048D</option>
+          <option value="HJN049">HJN049</option>
+          <option value="HJN049D">HJN049D</option>
+          <option value="HJN050">HJN050</option>
+          <option value="HJN051">HJN051</option>
+          <option value="HJN052">HJN052</option>
+          <option value="HJN053">HJN053</option>
+          <option value="HJN056">HJN056</option>
+          <option value="HJN058">HJN058</option>
+          <option value="HJN059">HJN059</option>
+          <option value="HJN067">HJN067</option>
+          <option value="HJN069">HJN069</option>
 
+          <option value="MKM001">MKM001</option>
+          <option value="MKM002">MKM002</option>
+          <option value="MKM003">MKM003</option>
+          <option value="MKM004">MKM004</option>
+          <option value="MKM005">MKM005</option>
+          <option value="MKM006">MKM006</option>
+          <option value="MKM007">MKM007</option>
+          <option value="MKM008">MKM008</option>
+          <option value="MKM009">MKM009</option>
+          <option value="MKM010">MKM010</option>
+          <option value="MKM011">MKM011</option>
+          <option value="MKM012">MKM012</option>
+          <option value="MKM013">MKM013</option>
+          <option value="MKM014">MKM014</option>
+          <option value="MKM015">MKM015</option>
+          <option value="MKM016">MKM016</option>
+          <option value="MKM017">MKM017</option>
+          <option value="MKM018">MKM018</option>
+          <option value="MKM019">MKM019</option>
+          <option value="MKM020">MKM020</option>
+          <option value="MKM021">MKM021</option>
+          <option value="MKM022">MKM022</option>
+          <option value="MKM023">MKM023</option>
+          <option value="MKM024">MKM024</option>
+          <option value="MKM025">MKM025</option>
+          <option value="MKM026">MKM026</option>
+          <option value="MKM027">MKM027</option>
+          <option value="MKM028">MKM028</option>
+          <option value="MKM029">MKM029</option>
+          <option value="MKM030">MKM030</option>
+          <option value="MKM031">MKM031</option>
+          <option value="MKM032">MKM032</option>
+          <option value="MKM033">MKM033</option>
+          <option value="MKM034">MKM034</option>
+          <option value="MKM035">MKM035</option>
+          <option value="MKM036">MKM036</option>
+          <option value="MKM037">MKM037</option>
+          <option value="MKM038">MKM038</option>
+          <option value="MKM039">MKM039</option>
+          <option value="MKM040">MKM040</option>
+          <option value="MKM041">MKM041</option>
+          <option value="MKM042">MKM042</option>
+          <option value="MKM043">MKM043</option>
+          <option value="MKM043D">MKM043D</option>
+          <option value="MKM045">MKM044</option>
+          <option value="MKM045">MKM045</option>
+          <option value="MKM046">MKM046</option>
+          <option value="MKM047">MKM047</option>
+          <option value="MKM048">MKM048</option>
+          <option value="MKM049">MKM049</option>
+          <option value="MKM050">MKM050</option>
+          <option value="MKM052">MKM052</option>
+          <option value="MKM053">MKM053</option>
+          <option value="MKM054">MKM054</option>
+          <option value="MKM055">MKM055</option>
+          <option value="MKM056">MKM056</option>
+          <option value="MKM057">MKM057</option>
+          <option value="MKM060D">MKM060D</option>
+          <option value="MKM061">MKM061</option>
+          <option value="MKM063">MKM063</option>
+          <option value="MKM064">MKM064</option>
+          <option value="MKM065">MKM065</option>
+          <option value="MKM066">MKM066</option>
+          <option value="MKM067">MKM067</option>
+          <option value="MKM068">MKM068</option>
+          <option value="MKM069">MKM069</option>
+
+          <!-- Add more options as needed -->
+        </select>
+        <div id="chart-container ">
+          <div id="common-tooltip" class="tooltip" style="display: none"></div>
+        </div>
+
+        <div id="slider-range"></div>
+        <!---div id="secondary-slider-container"></div>-->
+        <div id="chart-container">
+          <!-- Dropdown menu for WELL values -->
+        </div>
+        <script src="{%static 'plots/d3.v7.min.js'%}"></script>
+        <script src="{%static 'plots/d3-simple-slider.js'%}"></script>
+        <script src="{%static 'plots/script1.js'%}"></script>
+        <!--end of graph code -->
         <!--end of content -->
 
         <!-- Footer Start -->
@@ -864,7 +882,6 @@
     <script src="{% static 'telestoapp/assets/js/vendor.min.js' %}"></script>
     <!-- Daterangepicker js -->
     <script src="{% static 'telestoapp/assets/vendor/daterangepicker/moment.min.js' %}"></script>
-    <script src="{% static 'telestoapp/assets/js/vendor.min.js' %}"></script>
     <!-- Apex Charts js -->
     <script src="{% static 'telestoapp/assets/vendor/apexcharts/apexcharts.min.js' %}"></script>
     <!-- Vector Map js -->

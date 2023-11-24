@@ -1,0 +1,81 @@
+rect {
+  pointer-events: all;
+  fill-opacity: 0;
+  stroke-opacity: 0;
+  z-index: 1;
+}
+
+.tooltip {
+  position: absolute;
+  padding: 5px;
+  background-color: rgb(11, 40, 65);
+  background-color: rgb(11, 40, 65);
+  color: white;
+  border: 0px solid white;
+  border-radius: 0px;
+  display: none;
+  opacity: 0.75;
+  font-size: 14px;
+}
+
+.tooltip-line {
+  stroke-opacity: 0.5;
+}
+
+/* Customize the slider track */
+.d3-slider-horizontal .d3-slider-track {
+  background-color: #f0f0f0;
+  /* Change the track background color */
+  height: 10px;
+  /* Adjust the track height */
+  border-radius: 5px;
+  /* Round the track edges */
+}
+
+/* Customize the slider handle */
+.d3-slider-handle {
+  background-color: #85bb65;
+  /* Change the handle color */
+  width: 30px;
+  /* Adjust the handle width */
+  height: 30px;
+  /* Adjust the handle height */
+  margin-top: -10px;
+  /* Center the handle vertically */
+  border: 2px solid #333;
+  /* Add a border to the handle */
+  border-radius: 50%;
+  /* Make the handle circular */
+}
+
+/* Customize the ticks */
+.d3-slider-tick {
+  background-color: #333;
+  /* Change the tick color */
+  height: 8px;
+  /* Adjust the tick height */
+  width: 2px;
+  /* Adjust the tick width */
+  margin-top: -4px;
+  /* Center the ticks vertically */
+}
+
+/* Customize the tick labels */
+.d3-slider-tick text {
+  fill: #333;
+  /* Change the tick label color */
+  font-size: 12px;
+  /* Adjust the tick label font size */
+  text-anchor: middle;
+  /* Center-align the tick labels */
+}
+
+/* Customize the selected range */
+.d3-slider-range {
+  background-color: #85bb65;
+  /* Change the selected range color */
+  height: 10px;
+  /* Adjust the range height */
+  border-radius: 5px;
+  /* Round the range edges */
+}
