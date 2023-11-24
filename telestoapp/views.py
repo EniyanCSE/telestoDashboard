@@ -25,8 +25,8 @@ def FractionalFlow(request):
 def plots(request):
     return render(request,'telestoapp/plots.html')
 
-def plotshis(request):
-    return render(request,'telestoapp/plots2.html')
+def plotshistory(request):
+    return render(request,'telestoapp/HistroySimulateVal.html')
 
 def contact(request):
     return render(request,'telestoapp/contact.html')
