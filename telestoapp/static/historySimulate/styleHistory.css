@@ -1,0 +1,53 @@
+/* * {
+    box-sizing: border-box;
+  }
+
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+  } */
+.tablink {
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 50%;
+}
+
+/* Style for light theme (default) */
+.tablink {
+  background-color: #adadad; /* Darker background for inactive tabs */
+  color: white;
+}
+
+.tablink.active {
+  background-color: #f5f5f5; /* Lighter background for active tab */
+  color: black;
+}
+
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 100px 20px;
+  height: 90vh;
+  background-color: #ffffff;
+}
+
+/* Style overrides for dark theme */
+@media (prefers-color-scheme: dark) {
+  .tablink {
+    background-color: #adadad; /* Darker background for inactive tabs in dark theme */
+  }
+
+  .tablink.active {
+    background-color: #f5f5f5; /* Lighter background for active tab in dark theme */
+  }
+
+  .tabcontent {
+    background-color: #ffffff;
+  }
+}

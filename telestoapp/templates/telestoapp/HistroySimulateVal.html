@@ -36,10 +36,16 @@
       id="app-style"
     />
     <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'historySimulate/styleHistory.css'%}"
+    />
+    <link
       href="{% static 'telestoapp/assets/css/app.min.css' %}"
       rel="stylesheet"
       type="text/css"
     />
+
     <!-- Icons css -->
     <link
       rel="stylesheet"
@@ -378,18 +384,20 @@
         <div class="content">
           <!-- Start Content-->
           <div class="container-fluid">
-            <div class="row">
-              <div class="col-12">
-                <div
-                  class="page-title-box justify-content-between d-flex align-items-lg-center flex-lg-row flex-column"
-                >
-                  <h4 class="page-title">Dashboard</h4>
-                </div>
-              </div>
-            </div>
-            <div
-              class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-6"
-            ></div>
+            <button class="tablink" onclick="openPage('allWell', this)">
+              All wells
+            </button>
+            <button
+              class="tablink"
+              onclick="openPage('selectedWell', this)"
+              id="defaultOpen"
+            >
+              selected Well
+            </button>
+
+            <div id="allWell" class="tabcontent">a</div>
+
+            <div id="selectedWell" class="tabcontent">b</div>
           </div>
         </div>
 
@@ -776,6 +784,22 @@
         const dropdownMenu = dropdownToggle.nextElementSibling;
         dropdownMenu.classList.toggle("show");
       });
+      function openPage(pageName, elmnt) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.className += " active";
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
     </script>
   </body>
 </html>
