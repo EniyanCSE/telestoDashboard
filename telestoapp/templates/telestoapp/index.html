@@ -10,7 +10,11 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta content="Telesto" name="Amrita_Students" />
-
+    <!--this is the vrr style external-->
+    <link
+      rel="stylesheet"
+      href="{% static 'telestoapp/static/vrrStyle.css' %}"
+    />
     <!-- App favicon -->
     <link
       rel="shortcut icon"
@@ -391,7 +395,21 @@
           </div>
         </div>
         <div class="container-fluid">
-          <div id="gd"></div>
+          <div class="chart-container">
+            <div id="gd"></div>
+            <div class="slider-container">
+              <input
+                type="range"
+                min="0"
+                max="5"
+                value="0"
+                step="1"
+                class="slider"
+                id="yearSlider"
+              />
+              <p>Year: <span id="sliderValue">1995</span></p>
+            </div>
+          </div>
         </div>
         <script src="{% static 'vrrAnalysis/d3.min.js' %}"></script>
         <script src="{% static 'vrrAnalysis/plotly-2.27.1.min.js' %}"></script>

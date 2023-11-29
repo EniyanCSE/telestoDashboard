@@ -1,0 +1,13 @@
+.chart-container {
+  width: 800px; /* Width of the Plotly graph */
+  margin: auto; /* Center the container */
+}
+
+.slider-container {
+  text-align: center;
+}
+
+.slider {
+  width: 100%;
+  margin: 10px 0;
+}
