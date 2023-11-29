@@ -1,6 +1,10 @@
 from django.shortcuts import render
 # Create your views here.
 
+# def my_view(request):
+#     csv_file_url = settings.MEDIA_URL + 'well_level_history_matching_and_prediction.csv'
+#     return render(request, 'my_template.html', {'csv_file_url': csv_file_url})
+
 def index(request):
     return render(request, 'telestoapp/index.html')
 
