@@ -19,5 +19,8 @@ urlpatterns = [
     path('auth_lock_screen/',views.auth_lock_screen,name='auth_lock_screen'),
     path('auth_logout_2',views.auth_logout_2,name='auth_logout_2'),
     path('auth_login_2/',views.auth_login,name='auth_login'),
-    path("auth_register_2/",views.auth_register_2,name="auth_register")
+    path("auth_register_2/",views.auth_register_2,name="auth_register"),
+    path('indexGas/',views.indexGas,name="indexGas"),
+    path('indexWater/',views.indexWater,name="indexWater"),
+    path('indexOil/',views.indexOil,name='indexOil'),
 ]

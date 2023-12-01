@@ -58,3 +58,12 @@ def auth_login(request):
 
 def auth_register_2(request):
     return render(request,'telestoapp/auth-register-2.html')
+
+def indexGas(request):
+    return render(request,'telestoapp/index_gas.html')
+
+def indexWater(request):
+    return render(request,'telestoapp/index_water.html')
+
+def indexOil(request):
+    return render(request,'telestoapp/oil_plotly.html')

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Production Rate</title>
+  <style>
+    rect {
+      pointer-events: all;
+      fill-opacity: 0;
+      stroke-opacity: 0;
+      z-index: 1;
+    }
+
+    .tooltip {
+      position: absolute;
+      padding: 5px;
+      background-color: rgb(11, 40, 65);
+      color: white;
+      border: 1px solid white;
+      border-radius: 5px;
+      font-size: 14px;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .tooltip-line {
+      stroke-opacity: 0.5;
+    }
+
+    .d3-slider-horizontal .d3-slider-track {
+      background-color: #f0f0f0;
+      height: 10px;
+      border-radius: 5px;
+    }
+
+    .d3-slider-handle {
+      background-color: #85bb65;
+      width: 30px;
+      height: 30px;
+      margin-top: -10px;
+      border: 2px solid #333;
+      border-radius: 50%;
+    }
+
+    .d3-slider-tick {
+      background-color: #333;
+      height: 8px;
+      width: 2px;
+      margin-top: -4px;
+    }
+
+    .d3-slider-tick text {
+      fill: #333;
+      font-size: 12px;
+      text-anchor: middle;
+    }
+
+    .d3-slider-range {
+      background-color: #85bb65;
+      height: 10px;
+      border-radius: 5px;
+    }
+
+    .legend {
+      position: absolute;
+      top: 70px;
+      left: 140px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .legend-line {
+      width: 30px;
+      height: 2px;
+      margin-right: 10px;
+    }
+
+    .legend-line.red {
+      background-color: red;
+    }
+
+    .legend-line.blue {
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="chart-container">
+    </div>
+    <div id="common-tooltip" class="tooltip" style="display: none;"></div>
+  </div>
+
+  <div id="slider-range"></div>
+
+  <!-- Include the Plotly library -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- Include the D3.js library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://unpkg.com/d3-simple-slider"></script>
+  <script src="script_plotly.js"></script>
+</body>
+
+</html>
