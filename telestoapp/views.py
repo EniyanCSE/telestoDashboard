@@ -6,7 +6,11 @@ from django.shortcuts import render
 #     return render(request, 'my_template.html', {'csv_file_url': csv_file_url})
 
 def index(request):
-    return render(request, 'telestoapp/index.html')
+    return render(request,'telestoapp/index.html')
+
+
+def vrrAnalysis(request):
+    return render(request, 'telestoapp/vrrAnalysis.html')
 
 def pages_profile(request):
     return render(request, 'telestoapp/pages-profile.html')

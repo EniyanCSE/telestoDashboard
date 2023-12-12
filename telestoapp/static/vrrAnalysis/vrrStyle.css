@@ -1,6 +1,7 @@
 .chart-container {
   width: 800px; /* Width of the Plotly graph */
   margin: auto; /* Center the container */
+  overflow-y: scroll;
 }
 
 .slider-container {
