@@ -383,122 +383,20 @@
                 <div
                   class="page-title-box justify-content-between d-flex align-items-lg-center flex-lg-row flex-column"
                 >
-                  <h4 class="page-title">Dashboard</h4>
+                  <h4 class="page-title">Hetrogenity Index</h4>
                 </div>
               </div>
             </div>
-
-            <div
-              class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-6"
-            >
-              <div class="col">
-                <div class="card widget-icon-box">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1 overflow-hidden">
-                        <h5
-                          class="text-muted text-uppercase fs-13 mt-0"
-                          title="Number of Customers"
-                        >
-                          Oil (Kls)
-                        </h5>
-                        <h3 class="my-3">7,005,193</h3>
-                        <p class="mb-0 text-muted text-truncate">
-                          <span class="badge bg-success me-1"
-                            ><i class="bi bi-arrow-up-short"></i> 2,541</span
-                          >
-                          <span>Since last month</span>
-                        </p>
-                      </div>
-                      <div class="avatar-sm flex-shrink-0">
-                        <span
-                          class="avatar-title text-bg-success rounded rounded-3 fs-3 widget-icon-box-avatar shadow"
-                        >
-                          <i class="bi bi-droplet"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end card-body-->
-                </div>
-                <!-- end card-->
-              </div>
-              <!-- end col-->
-
-              <div class="col">
-                <div class="card widget-icon-box">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1 overflow-hidden">
-                        <h5
-                          class="text-muted text-uppercase fs-13 mt-0"
-                          title="Number of Orders"
-                        >
-                          Water (Kls)
-                        </h5>
-                        <h3 class="my-3">5,640,514</h3>
-                        <p class="mb-0 text-muted text-truncate">
-                          <span class="badge bg-danger me-1"
-                            ><i class="bi bi-arrow-down-short"></i> 1.08%</span
-                          >
-                          <span>Since last month</span>
-                        </p>
-                      </div>
-                      <div class="avatar-sm flex-shrink-0">
-                        <span
-                          class="avatar-title text-bg-info rounded rounded-3 fs-3 widget-icon-box-avatar shadow"
-                        >
-                          <i class="bi bi-droplet-fill"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end card-body-->
-                </div>
-                <!-- end card-->
-              </div>
-              <!-- end col-->
-
-              <div class="col">
-                <div class="card widget-icon-box">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div class="flex-grow-1 overflow-hidden">
-                        <h5
-                          class="text-muted text-uppercase fs-13 mt-0"
-                          title="Average Revenue"
-                        >
-                          Gas (Mscum)
-                        </h5>
-                        <h3 class="my-3">3,644,262</h3>
-                        <p class="mb-0 text-muted text-truncate">
-                          <span class="badge bg-danger me-1"
-                            ><i class="bi bi-arrow-down-short"></i> 7.00%</span
-                          >
-                          <span>Since last month</span>
-                        </p>
-                      </div>
-                      <div class="avatar-sm flex-shrink-0">
-                        <span
-                          class="avatar-title text-bg-danger rounded rounded-3 fs-3 widget-icon-box-avatar shadow"
-                        >
-                          <i class="bi bi-droplet-half"></i>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end card-body-->
-                </div>
-                <!-- end card-->
-              </div>
-              <!-- end col-->
-            </div>
-            <!-- end row -->
           </div>
         </div>
 
         <!--end of content -->
-
+        <div class="container-fluid">
+          <input type="file" id="csv-file" accept=".csv" />
+          <div id="myDiv"></div>
+        </div>
+        <script src="{%static 'hiAnalysis/plotly-latest.min.js'%}"></script>
+        <script src="{% static 'hiAnalysis/hiscript.js' %}"></script>
         <!-- Footer Start -->
         <footer class="footer">
           <div class="container-fluid">
