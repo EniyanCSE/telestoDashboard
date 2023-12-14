@@ -1,5 +1,5 @@
 .chart-container {
-  width: 800px; /* Width of the Plotly graph */
+  width: 100%; /* Width of the Plotly graph */
   margin: auto; /* Center the container */
   overflow-y: scroll;
 }
@@ -10,5 +10,5 @@
 
 .slider {
   width: 100%;
-  margin: 10px 0;
+  margin: 1px 0;
 }
